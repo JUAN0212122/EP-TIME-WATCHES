@@ -178,11 +178,13 @@
     }
 
     function goBack() {
-      document.getElementById('brandButtons').classList.remove('hidden');
-      document.getElementById('productsContainer').classList.add('hidden');
-      document.getElementById('backButton').classList.add('hidden');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+  document.getElementById('brandButtons').classList.remove('hidden');
+  document.getElementById('productsContainer').classList.add('hidden');
+  document.getElementById('backButton').classList.add('hidden');
+  setTimeout(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, 100);
+}
   </script>
 </body>
 </html>

@@ -62,10 +62,12 @@
     <!-- Productos por marca -->
     <div id="productsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 hidden"></div>
 
-    <!-- Botón de volver -->
-    <div id="backButtonContainer" class="mt-6 hidden">
-      <button class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition" onclick="goBack()">Volver al inicio</button>
-    </div>
+    <!-- Botón flotante de volver -->
+<button id="backButton"
+  class="hidden fixed bottom-6 right-6 bg-black text-white px-4 py-3 rounded-full shadow-lg hover:bg-gray-800 transition z-50"
+  onclick="goBack()">
+  ⬅ Volver
+</button>
   </main>
 
   <!-- Contacto -->
@@ -146,7 +148,7 @@
     function showBrand(brand) {
       document.getElementById('brandButtons').classList.add('hidden');
       document.getElementById('productsContainer').classList.remove('hidden');
-      document.getElementById('backButtonContainer').classList.remove('hidden');
+      document.getElementById('backButton').classList.remove('hidden');
 
       const container = document.getElementById('productsContainer');
       container.innerHTML = '';
@@ -178,7 +180,7 @@
     function goBack() {
       document.getElementById('brandButtons').classList.remove('hidden');
       document.getElementById('productsContainer').classList.add('hidden');
-      document.getElementById('backButtonContainer').classList.add('hidden');
+      document.getElementById('backButton').classList.add('hidden');
     }
   </script>
 </body>

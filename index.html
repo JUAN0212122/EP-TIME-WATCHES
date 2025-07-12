@@ -2,18 +2,14 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>EP TIME WATCHES</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-    }
-    .fade-in {
-      animation: fadeIn 1.5s ease-in-out;
-    }
+    body { font-family: 'Segoe UI', sans-serif; }
+    .fade-in { animation: fadeIn 0.8s ease; }
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
+      from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
   </style>
@@ -21,65 +17,69 @@
 <body class="bg-gray-100 text-gray-800">
 
   <!-- Header -->
-  <header class="bg-white shadow-md fade-in">
+  <header class="bg-black text-white shadow-md fade-in">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-gray-900">EP TIME WATCHES</h1>
-      <nav class="space-x-4 text-sm text-gray-600 hidden md:block">
-        <a href="#" class="hover:text-black transition">Inicio</a>
-        <a href="#" class="hover:text-black transition">Productos</a>
-        <a href="#" class="hover:text-black transition">Nosotros</a>
-        <a href="#contacto" class="hover:text-black transition">Contacto</a>
+      <h1 class="text-2xl font-bold">EP TIME WATCHES</h1>
+      <nav class="space-x-4 text-sm hidden md:block">
+        <a href="#" class="hover:underline">Inicio</a>
+        <a href="#contacto" class="hover:underline">Contacto</a>
       </nav>
     </div>
   </header>
 
   <!-- Hero -->
   <section style="background-image: url('https://qui-a-invente.eu/wp-content/uploads/2022/02/l-invention-de-la-montre.jpg'); background-size: cover; background-position: center;" class="h-[60vh] flex items-center justify-center fade-in">
-    <div class="bg-black/60 p-8 rounded-lg text-center max-w-xl text-white">
+    <div class="bg-black/70 p-8 rounded-lg text-center max-w-xl text-white">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Descubre la esencia del tiempo</h2>
       <p class="text-lg">En EP TIME WATCHES, combinamos elegancia y precisión para reflejar tu estilo único.</p>
     </div>
   </section>
 
-  <!-- Productos -->
-  <section class="py-12 bg-gray-50 fade-in">
-    <div class="container mx-auto px-4">
-      <h3 class="text-2xl font-bold mb-8 text-center text-gray-800">Nuestra colección</h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-12 fade-in">
 
-        <!-- Producto 1 - ROLEX DATE JUST -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
-          <img src="https://i.imgur.com/V4D8Pzt.jpeg" alt="ROLEX DATE JUST" class="w-full h-64 object-cover">
-          <div class="p-4">
-            <h4 class="text-xl font-semibold mb-1">ROLEX DATE JUST</h4>
-            <p class="text-gray-600 mb-1">Estilo clásico con detalles modernos.</p>
-            <p class="text-gray-900 font-bold mb-4">$120.000</p>
-            <a href="https://wa.me/573113296885?text=Hola%2C%20me%20interesa%20el%20ROLEX%20DATE%20JUST%20%F0%9F%91%8D%0A%0AImagen%3A%20https%3A%2F%2Fi.imgur.com%2FV4D8Pzt.jpeg%0APrecio%3A%20$120.000%20COP"
-              target="_blank"
-              class="inline-block bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition">
-              Comprar
-            </a>
-          </div>
-        </div>
-
-        <!-- Producto 2 - ROLEX DATE DATE -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
-          <img src="https://i.imgur.com/sIBo7Em.jpeg" alt="ROLEX DATE DATE" class="w-full h-64 object-cover">
-          <div class="p-4">
-            <h4 class="text-xl font-semibold mb-1">ROLEX DATE DATE</h4>
-            <p class="text-gray-600 mb-1">Diseño minimalista con acabados dorados.</p>
-            <p class="text-gray-900 font-bold mb-4">$120.000</p>
-            <a href="https://wa.me/573113296885?text=Hola%2C%20me%20interesa%20el%20ROLEX%20DATE%20DATE%20%F0%9F%91%8D%0A%0AImagen%3A%20https%3A%2F%2Fi.imgur.com%2FsIBo7Em.jpeg%0APrecio%3A%20$120.000%20COP"
-              target="_blank"
-              class="inline-block bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition">
-              Comprar
-            </a>
-          </div>
-        </div>
-
-      </div>
+    <!-- Botones de marcas -->
+    <div id="brandButtons" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <script>
+        const brands = [
+          "ROLEX",
+          "AP",
+          "CARTIER",
+          "CASIO",
+          "G-SHOCK",
+          "HUBLOT",
+          "INVICTA",
+          "MINIFOCUS",
+          "ORIENT",
+          "PATEK",
+          "Q&Q",
+          "RICHARD MILLE",
+          "SANSE",
+          "TECHNO",
+          "TECHNOMARINE",
+          "TISSOT"
+        ];
+        brands.forEach((brand) => {
+          document.write(`
+            <button
+              class="bg-black text-white text-lg py-4 px-6 rounded-lg shadow hover:bg-gray-800 hover:shadow-lg transition w-full"
+              onclick="showBrand('${brand}')"
+            >
+              ${brand}
+            </button>
+          `);
+        });
+      </script>
     </div>
-  </section>
+
+    <!-- Productos por marca -->
+    <div id="productsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 hidden"></div>
+
+    <!-- Botón de volver -->
+    <div id="backButtonContainer" class="mt-6 hidden">
+      <button class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition" onclick="goBack()">Volver al inicio</button>
+    </div>
+  </main>
 
   <!-- Contacto -->
   <section id="contacto" class="bg-white py-12 fade-in">
@@ -93,9 +93,60 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-white py-4 text-center fade-in">
+  <footer class="bg-black text-white py-4 text-center fade-in">
     © 2025 EP TIME WATCHES. Todos los derechos reservados.
   </footer>
 
+  <script>
+    const products = {
+      "AP": [
+        { name: "AP Modelo 1", img: "https://i.postimg.cc/wv4hmbRk/AP.jpg" },
+        { name: "AP Modelo 2", img: "https://i.postimg.cc/RC87CyBS/AP1.jpg" },
+        { name: "AP Modelo 3", img: "https://i.postimg.cc/1XLwWnHn/AP2.jpg" },
+        { name: "AP Modelo 4", img: "https://i.postimg.cc/t4GFW6J8/AP4.jpg" },
+        { name: "AP Modelo 5", img: "https://i.postimg.cc/65vd8cWd/AP5.jpg" },
+        { name: "AP Modelo 6", img: "https://i.postimg.cc/sXMJwrrL/AP3.jpg" }
+      ]
+      // Aquí puedes agregar más marcas con imágenes si quieres
+    };
+
+    function showBrand(brand) {
+      document.getElementById('brandButtons').classList.add('hidden');
+      document.getElementById('productsContainer').classList.remove('hidden');
+      document.getElementById('backButtonContainer').classList.remove('hidden');
+
+      const container = document.getElementById('productsContainer');
+      container.innerHTML = '';
+
+      if (!products[brand]) {
+        container.innerHTML = '<p class="text-gray-600 col-span-2">No hay productos disponibles todavía.</p>';
+        return;
+      }
+
+      products[brand].forEach((product) => {
+        const item = document.createElement('div');
+        item.className = 'bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300';
+        item.innerHTML = `
+          <img src="${product.img}" alt="${product.name}" class="w-full h-64 object-cover">
+          <div class="p-4">
+            <h4 class="text-xl font-semibold mb-1">${product.name}</h4>
+            <p class="text-gray-900 font-bold mb-4">$120.000</p>
+            <a href="https://wa.me/573113296885?text=Hola,%20me%20interesa%20el%20${encodeURIComponent(product.name)}%0AImagen:%20${encodeURIComponent(product.img)}%0APrecio:%20$120.000%20COP"
+              target="_blank"
+              class="inline-block bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition">
+              Comprar
+            </a>
+          </div>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    function goBack() {
+      document.getElementById('brandButtons').classList.remove('hidden');
+      document.getElementById('productsContainer').classList.add('hidden');
+      document.getElementById('backButtonContainer').classList.add('hidden');
+    }
+  </script>
 </body>
 </html>

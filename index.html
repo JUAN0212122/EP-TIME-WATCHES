@@ -6,133 +6,121 @@
   <title>EP TIME WATCHES</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body { font-family: 'Segoe UI', sans-serif; }
-    .fade-in { animation: fadeIn 0.8s ease; }
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out;
+    }
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {opacity: 0;}
+      to {opacity: 1;}
     }
   </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
-
-  <!-- Header -->
-  <header class="bg-black text-white shadow-md fade-in">
-    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold">EP TIME WATCHES</h1>
-      <nav class="space-x-4 text-sm hidden md:block">
-        <a href="#" class="hover:underline">Inicio</a>
-        <a href="#contacto" class="hover:underline">Contacto</a>
-      </nav>
-    </div>
+<body class="bg-black text-white font-sans">
+  <header class="text-center p-6">
+    <h1 class="text-3xl font-bold mb-2">EP TIME WATCHES</h1>
+    <p class="text-gray-400">Descubre la esencia del tiempo en cada detalle</p>
   </header>
 
-  <!-- Hero -->
-  <section style="background-image: url('https://qui-a-invente.eu/wp-content/uploads/2022/02/l-invention-de-la-montre.jpg'); background-size: cover; background-position: center;" class="h-[60vh] flex items-center justify-center fade-in">
-    <div class="bg-black/70 p-8 rounded-lg text-center max-w-xl text-white">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Descubre la esencia del tiempo</h2>
-      <p class="text-lg">En EP TIME WATCHES, combinamos elegancia y precisión para reflejar tu estilo único.</p>
-    </div>
-  </section>
+  <main class="max-w-6xl mx-auto px-4">
+    <section id="brandButtons" class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+      <button onclick="showBrand('AP')" class="bg-gray-800 hover:bg-gray-700 p-4 rounded">AP</button>
+      <button onclick="showBrand('Cartier')" class="bg-gray-800 hover:bg-gray-700 p-4 rounded">Cartier</button>
+      <button onclick="showBrand('ROLEX')" class="bg-gray-800 hover:bg-gray-700 p-4 rounded">Rolex</button>
+      <!-- Puedes agregar más botones aquí si quieres más marcas -->
+    </section>
 
-  <!-- Main Content -->
-  <main class="container mx-auto px-4 py-12 fade-in">
-
-    <!-- Botones de marcas -->
-    <div id="brandButtons" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <script>
-        const brands = [
-          "ROLEX", "AP", "CARTIER", "CASIO", "G-SHOCK", "HUBLOT",
-          "INVICTA", "MINIFOCUS", "ORIENT", "PATEK", "Q&Q",
-          "RICHARD MILLE", "SANSE", "TECHNO", "TECHNOMARINE", "TISSOT"
-        ];
-        brands.forEach((brand) => {
-          document.write(`
-            <button
-              class="bg-black text-white text-lg py-4 px-6 rounded-lg shadow hover:bg-gray-800 hover:shadow-lg transition w-full"
-              onclick="showBrand('${brand}')"
-            >
-              ${brand}
-            </button>
-          `);
-        });
-      </script>
+    <div id="backButtonContainer" class="mb-4 hidden">
+      <button onclick="goBack()" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded">← Volver</button>
     </div>
 
-    <!-- Productos por marca -->
-    <div id="productsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 hidden"></div>
-
-    <!-- Botón de volver -->
-    <div id="backButtonContainer" class="mt-6 hidden">
-      <button class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition" onclick="goBack()">Volver al inicio</button>
-    </div>
+    <section id="productsContainer" class="grid grid-cols-1 md:grid-cols-3 gap-6 hidden"></section>
   </main>
 
-  <!-- Contacto -->
-  <section id="contacto" class="bg-white py-12 fade-in">
-    <div class="container mx-auto px-4 text-center">
-      <h3 class="text-2xl font-bold mb-4">¿Listo para encontrar tu estilo perfecto?</h3>
-      <p class="mb-6 text-gray-600">Contáctanos por WhatsApp para más información o pedidos personalizados.</p>
-      <a href="https://wa.me/573113296885" target="_blank" class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition">
-        Escríbenos por WhatsApp
-      </a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-black text-white py-4 text-center fade-in">
-    © 2025 EP TIME WATCHES. Todos los derechos reservados.
-  </footer>
-
-  <!-- Script -->
   <script>
     const products = {
-      "AP": [
+              "AP": [
         { name: "AP Modelo 1", img: "https://i.postimg.cc/wv4hmbRk/AP.jpg" },
         { name: "AP Modelo 2", img: "https://i.postimg.cc/RC87CyBS/AP1.jpg" },
         { name: "AP Modelo 3", img: "https://i.postimg.cc/1XLwWnHn/AP2.jpg" },
         { name: "AP Modelo 4", img: "https://i.postimg.cc/t4GFW6J8/AP4.jpg" },
         { name: "AP Modelo 5", img: "https://i.postimg.cc/65vd8cWd/AP5.jpg" },
         { name: "AP Modelo 6", img: "https://i.postimg.cc/sXMJwrrL/AP3.jpg" }
+      ],
+      "Cartier": [
+        { name: "Cartier Modelo 1", img: "https://i.postimg.cc/sXP5nDLw/0861e1e8-60b6-44f8-a342-d28b0b35e0d7.jpg" },
+        { name: "Cartier Modelo 2", img: "https://i.postimg.cc/fR6XD9n8/15257133-b2d2-4b42-8188-8305177f228b.jpg" },
+        { name: "Cartier Modelo 3", img: "https://i.postimg.cc/MZDyVHVG/585105c7-9985-40bb-9bbd-15defe41ecb4.jpg" },
+        { name: "Cartier Modelo 4", img: "https://i.postimg.cc/zv0Kr28h/60ffbac0-2204-4e1d-a244-cb932a3e5915.jpg" },
+        { name: "Cartier Modelo 5", img: "https://i.postimg.cc/tgx3xzN0/6c446769-3bab-4c45-81a3-92792af927d9.jpg" },
+        { name: "Cartier Modelo 6", img: "https://i.postimg.cc/Bn8DrCy8/722514f3-5be5-4e1a-8caf-5752c8759f54.jpg" },
+        { name: "Cartier Modelo 7", img: "https://i.postimg.cc/C5Fk9pTY/7264d241-32a6-4f43-b341-7acded3eca82.jpg" },
+        { name: "Cartier Modelo 8", img: "https://i.postimg.cc/pTMDYnsm/7a65d199-d7bb-4219-819a-af5560f08c64.jpg" },
+        { name: "Cartier Modelo 9", img: "https://i.postimg.cc/zfKhBGq8/cb6a188b-ebc7-4a5d-ba7d-23af925095a6.jpg" },
+        { name: "Cartier Modelo 10", img: "https://i.postimg.cc/hjnd7RGx/d20d5881-18b4-4d30-94ba-93037c5a73e4.jpg" },
+        { name: "Cartier Modelo 11", img: "https://i.postimg.cc/qRGCsDtF/de0ff9e5-527c-464d-b5cd-121f31d67109.jpg" },
+        { name: "Cartier Modelo 12", img: "https://i.postimg.cc/fyTSB7mR/ff29d160-1031-4560-89ca-aa40177ac44d.jpg" }
+      ],
+      "ROLEX": [
+        { name: "Rolex Modelo 1", img: "https://i.postimg.cc/26P8B4Gt/0e3064b1-904d-4bf6-a637-55f7e5da080d.jpg" },
+        { name: "Rolex Modelo 2", img: "https://i.postimg.cc/Qd08qLS1/14f74bd6-935e-4e62-a038-7e9b4e572712.jpg" },
+        { name: "Rolex Modelo 3", img: "https://i.postimg.cc/sfh2CNDC/1cabfa00-da98-490f-973e-9e3932311580.jpg" },
+        { name: "Rolex Modelo 4", img: "https://i.postimg.cc/yYK746b0/32708e54-dd86-43c5-866b-ccd5da745195.jpg" },
+        { name: "Rolex Modelo 5", img: "https://i.postimg.cc/FKz9WPnq/35cd14f2-e726-4e41-84e7-fd5155756659.jpg" },
+        { name: "Rolex Modelo 6", img: "https://i.postimg.cc/0QJ9xzv0/386a1066-97b7-4f40-b89d-a6c4a5ae93fa.jpg" },
+        { name: "Rolex Modelo 7", img: "https://i.postimg.cc/xTGTcNzs/3d2cf1ac-856f-46a3-8a0b-c316d2273959.jpg" },
+        { name: "Rolex Modelo 8", img: "https://i.postimg.cc/CLpxhszB/3dfe8f75-b6e0-4723-bd35-6ca57bc65d2d.jpg" },
+        { name: "Rolex Modelo 9", img: "https://i.postimg.cc/QMzjRp2M/45d39f59-81f7-41a6-aded-0fd9801f285c.jpg" },
+        { name: "Rolex Modelo 10", img: "https://i.postimg.cc/FHWvLysx/711034ca-5cc2-44c0-9b3e-9708a7a206fb.jpg" },
+        { name: "Rolex Modelo 11", img: "https://i.postimg.cc/RCKvDJXM/7657e33a-f7ed-4713-97be-182d744afab9.jpg" },
+        { name: "Rolex Modelo 12", img: "https://i.postimg.cc/6qJtQB5J/781afb84-5207-44ea-92aa-b20f0544e22f.jpg" },
+        { name: "Rolex Modelo 13", img: "https://i.postimg.cc/3xJ7NS7R/88529865-8e70-4b96-8a0a-47a2b985d686.jpg" },
+        { name: "Rolex Modelo 14", img: "https://i.postimg.cc/fycZt1J3/8916d997-7638-4bb0-b23a-93f6a9856cb0.jpg" },
+        { name: "Rolex Modelo 15", img: "https://i.postimg.cc/gkKmY9CQ/9047c7e0-1091-41b0-90b5-0a0bb57fa5ca.jpg" },
+        { name: "Rolex Modelo 16", img: "https://i.postimg.cc/Gmc3Y3Pb/9bd6049a-5309-4ed0-89af-f2e95fef1543.jpg" },
+        { name: "Rolex Modelo 17", img: "https://i.postimg.cc/jjDbQDDY/a1bd4e25-5076-4eac-b37e-465487ba6ae9.jpg" },
+        { name: "Rolex Modelo 18", img: "https://i.postimg.cc/DzRKC7GJ/ac3f3bb9-da3e-4e24-9fae-a1f80e3e6fa3.jpg" },
+        { name: "Rolex Modelo 19", img: "https://i.postimg.cc/rmW237Gh/b82a6cd7-5e5d-43b9-919d-5b6e99d83b1a.jpg" },
+        { name: "Rolex Modelo 20", img: "https://i.postimg.cc/RhL5VfDK/c956ed47-d556-4bda-be04-1e96d537d63d.jpg" },
+        { name: "Rolex Modelo 21", img: "https://i.postimg.cc/C5gpgJmw/c9bc4011-034d-4f89-8be1-bd8e39bba668.jpg" },
+        { name: "Rolex Modelo 22", img: "https://i.postimg.cc/J7NWqVz0/d439e255-c1d6-4fba-827c-bd78c4d37d59.jpg" },
+        { name: "Rolex Modelo 23", img: "https://i.postimg.cc/7Yqrts5V/eed21fa4-9c06-4067-a366-7e2ed361f5b7.jpg" },
+        { name: "Rolex Dama Modelo 1", img: "https://i.postimg.cc/ZYcMnTq8/421f117f-b467-45ee-99d6-b2287725d180.jpg" },
+        { name: "Rolex Dama Modelo 2", img: "https://i.postimg.cc/02XXGcDr/58294fb6-3b82-46b3-b4b0-7dc2a531969e.jpg" },
+        { name: "Rolex Dama Modelo 3", img: "https://i.postimg.cc/rmGYSTNL/7db405fb-b187-43c4-9f14-a418d6079df2.jpg" },
+        { name: "Rolex Dama Modelo 4", img: "https://i.postimg.cc/FzDWBx6W/86302d76-2192-4001-933e-80ab234c2d96.jpg" },
+        { name: "Rolex Dama Modelo 5", img: "https://i.postimg.cc/YqCymJ4J/a28f9b30-45dc-4ccb-9edb-44a27bba479d.jpg" },
+        { name: "Rolex Dama Modelo 6", img: "https://i.postimg.cc/0y6WVD0n/c079ffc3-3c72-45c6-a754-8c957e547ad9.jpg" },
+        { name: "Rolex Dama Modelo 7", img: "https://i.postimg.cc/Bndhkbh0/d8f80d5e-e2f3-422e-9be9-01d62320726e.jpg" }
       ]
-    };
+          };
 
     function showBrand(brand) {
-      document.getElementById('brandButtons').classList.add('hidden');
-      document.getElementById('productsContainer').classList.remove('hidden');
-      document.getElementById('backButtonContainer').classList.remove('hidden');
-
       const container = document.getElementById('productsContainer');
+      const backButton = document.getElementById('backButtonContainer');
+      const brandButtons = document.getElementById('brandButtons');
+
       container.innerHTML = '';
-
-      if (!products[brand]) {
-        container.innerHTML = '<p class="text-gray-600 col-span-2">No hay productos disponibles todavía.</p>';
-        return;
-      }
-
       products[brand].forEach((product) => {
-        const item = document.createElement('div');
-        item.className = 'bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300';
-        item.innerHTML = `
-          <img src="${product.img}" alt="${product.name}" class="w-full h-48 object-contain bg-gray-100">
-          <div class="p-4">
-            <h4 class="text-xl font-semibold mb-1">${product.name}</h4>
-            <p class="text-gray-900 font-bold mb-4">$120.000</p>
-            <a href="https://wa.me/573113296885?text=Hola,%20me%20interesa%20el%20${encodeURIComponent(product.name)}%0AImagen:%20${encodeURIComponent(product.img)}%0APrecio:%20$120.000%20COP"
-              target="_blank"
-              class="inline-block bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition">
-              Comprar
-            </a>
-          </div>
+        const card = document.createElement('div');
+        card.className = 'bg-gray-800 rounded p-4 fade-in';
+        card.innerHTML = `
+          <img src="${product.img}" alt="${product.name}" class="w-full h-64 object-cover rounded mb-2"/>
+          <h3 class="text-lg font-semibold mb-1">${product.name}</h3>
+          <p class="mb-2">Precio: $120,000</p>
+          <a href="https://wa.me/573113296885?text=Hola, me interesa este reloj: ${encodeURIComponent(product.name)}%0A${encodeURIComponent(product.img)}%0APrecio: $120,000" target="_blank" class="bg-green-600 hover:bg-green-500 px-3 py-2 rounded inline-block">Comprar por WhatsApp</a>
         `;
-        container.appendChild(item);
+        container.appendChild(card);
       });
+
+      brandButtons.classList.add('hidden');
+      backButton.classList.remove('hidden');
+      container.classList.remove('hidden');
     }
 
     function goBack() {
-      document.getElementById('brandButtons').classList.remove('hidden');
       document.getElementById('productsContainer').classList.add('hidden');
       document.getElementById('backButtonContainer').classList.add('hidden');
+      document.getElementById('brandButtons').classList.remove('hidden');
     }
   </script>
 </body>

@@ -42,22 +42,9 @@
     <div id="brandButtons" class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <script>
         const brands = [
-          "ROLEX",
-          "AP",
-          "CARTIER",
-          "CASIO",
-          "G-SHOCK",
-          "HUBLOT",
-          "INVICTA",
-          "MINIFOCUS",
-          "ORIENT",
-          "PATEK",
-          "Q&Q",
-          "RICHARD MILLE",
-          "SANSE",
-          "TECHNO",
-          "TECHNOMARINE",
-          "TISSOT"
+          "ROLEX", "AP", "CARTIER", "CASIO", "G-SHOCK", "HUBLOT",
+          "INVICTA", "MINIFOCUS", "ORIENT", "PATEK", "Q&Q",
+          "RICHARD MILLE", "SANSE", "TECHNO", "TECHNOMARINE", "TISSOT"
         ];
         brands.forEach((brand) => {
           document.write(`
@@ -97,6 +84,7 @@
     © 2025 EP TIME WATCHES. Todos los derechos reservados.
   </footer>
 
+  <!-- Script -->
   <script>
     const products = {
       "AP": [
@@ -107,7 +95,6 @@
         { name: "AP Modelo 5", img: "https://i.postimg.cc/65vd8cWd/AP5.jpg" },
         { name: "AP Modelo 6", img: "https://i.postimg.cc/sXMJwrrL/AP3.jpg" }
       ]
-      // Aquí puedes agregar más marcas con imágenes si quieres
     };
 
     function showBrand(brand) {
@@ -127,7 +114,7 @@
         const item = document.createElement('div');
         item.className = 'bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300';
         item.innerHTML = `
-          <img src="${product.img}" alt="${product.name}" class="w-full h-64 object-cover">
+          <img src="${product.img}" alt="${product.name}" class="w-full h-48 object-contain bg-gray-100">
           <div class="p-4">
             <h4 class="text-xl font-semibold mb-1">${product.name}</h4>
             <p class="text-gray-900 font-bold mb-4">$120.000</p>
